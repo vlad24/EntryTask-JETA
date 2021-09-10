@@ -22,9 +22,11 @@ Players produce/consume to/from one partitioned topic called `game`.
 Kafka transactions are used to have `exactly-once` event-handling semantics.
 
 ### Distribution
-####Kafka
+
+#### Kafka
 To run kafka there is kafka docker-compose file under `kafka-platfrom` directory.
-####Player process
+
+#### Player process
 Each of the player can be run in a docker container.
 Corresponding `Dockerfile` can be found under `player` module.
 Dockerfile assumes that project is already built. 
@@ -41,7 +43,7 @@ Modes supported:
 * `MANUAL`: player will always ask human for further actions
 
 When player is configured to run in some **AUTO_** mode, then:
-* player 1 will always trigger new game with random initial balance from [50_000, 100_000)
+* player 1 will always trigger new game with random initial balance from 50_000 to 100_000
   * to customize this range override `player.startBalanceFrom` and `player.startBalanceTo` properties in run script
   * NB: this also assumes that if player 1 is restarted during ongoing game, an extra game will be launched after player 1 restarts. So to play with player connection/disconnection it is better to experiment with player 2
 * on each turn player will think for some amount of seconds for demo purposes which is 1 by default
@@ -53,8 +55,9 @@ When player is started in **MANUAL** mode:
 * initial balance is asked from the user. It must be greater than 1
 * loosing player can initiate a revenge game, if human wishes to
 
-##Run instructions
-###TL;DR
+## Run instructions
+
+### TL;DR
 ```bash
 ./run-kafka.sh
 ./run-player-1.sh MANUAL
@@ -67,6 +70,6 @@ Then each of the players can be started/stopped.
 To start first and second players use `run-player-*.sh` scripts. Those scripts expect one argument specifying the playing mode/stragegy for the player.
 To start a player which will play automatically, specify one of the following options for `run-player-*.sh` script:
 
-##Possible improvements
+## Possible improvements
 * Support indefinite amount of players with search-for-opponent logic
 * For 2-player-only game could add sync mechanisms(e.g. via persistence) not to start games when some already in-progress 
