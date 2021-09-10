@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %black(%date{dd.MM.yyyy HH:mm:ss}) [%highlight(%-5level)] %yellow(%C{1.}): %msg%n%throwable
+            </Pattern>
+        </layout>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="Console"/>
+    </root>
+
+    <logger name="com.vladsolutions" level="debug" additivity="true"/>
+    <logger name="org.apache.kafka" level="warn" additivity="true"/>
+
+</configuration>
