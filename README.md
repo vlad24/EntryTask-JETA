@@ -72,4 +72,4 @@ Then each of the players can be started/stopped. To start first players use `run
 
 ## Possible improvements
 * Support indefinite amount of players with search-for-opponent logic
-* For 2-player-only game could add sync mechanisms(e.g. via persistence) not to start games when some already in-progress 
+* For 2-player-only game could add sync mechanisms(e.g. via persistence) not to start games when some game is already in-progress 
