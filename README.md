@@ -1,5 +1,7 @@
-#Three Game Demo Implementation
-##Overview
+# Three-Game Demo Implementation
+
+## Overview
+
 Simple implementation of game where two players are 
 ping-ponging a whole number (called *balance*) which each of the players can modify according to some rules.
 On each turn, a player can choose to either increment, decrement or keep the balance as is. 
